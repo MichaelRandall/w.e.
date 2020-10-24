@@ -1,4 +1,4 @@
-const core_list = [
+const site = [
     {
         "site_id": "1",
         "arnld": "Yes",
