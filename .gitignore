@@ -22,4 +22,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-/src/tools/mockData_x.js.txt
+/tools/mockData_x.js.txt
