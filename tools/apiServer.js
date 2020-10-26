@@ -44,12 +44,12 @@ server.use((req, res, next) => {
   next();
 });
 
-server.post("/core_list/", function (req, res, next) {
+server.post("/sites/", function (req, res, next) {
   const error = validateCourse(req.body);
   if (error) {
     res.status(400).send(error);
   } else {
-    req.body.slug = createSlug(req.body.title); // Generate a slug for new courses.
+    req.body.slug = createSlug(req.body.title); // Generate a slug for new sites.
     next();
   }
 });
@@ -73,9 +73,9 @@ function createSlug(value) {
     .toLowerCase();
 }
 
-function validateCourse(core_list) {
-  if (!core_list.site_id) return "Title is required.";
-  if (!core_list.url) return "Author is required.";
-  if (!core_list.path) return "Category is required.";
+function validateCourse(sites) {
+  if (!sites.site_id) return "Title is required.";
+  if (!sites.url) return "Author is required.";
+  if (!sites.path) return "Category is required.";
   return "";
 }

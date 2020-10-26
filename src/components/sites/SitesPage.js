@@ -1,60 +1,69 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as siteActions from "../../redux/actions/siteActions";
+import * as organizationActions from "../../redux/actions/organizationActions";
 import PropTypes from "prop-types";
 import { bindActionCreators } from "redux";
 
+import SiteList from "./SiteList";
+
 class SitesPage extends React.Component {
-  state = {
-    site: {
-      url: "",
-    },
-  };
+  componentDidMount() {
+    if (this.props.sites.length === 0) {
+      this.props.actions.loadSites().catch((error) => {
+        alert("Loading sites failed" + error);
+      });
+    }
 
-  handleChange = (event) => {
-    const site = { ...this.state.site, url: event.target.value };
-    this.setState({ site });
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    this.props.actions.createSite(this.state.site);
-  };
+    if (this.props.organizations.length === 0) {
+      this.props.actions.loadOrganizations().catch((error) => {
+        alert("Loading organizations failed" + error);
+      });
+    }
+  }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <>
         <h2>Sites</h2>
-        <h3>Add Site</h3>
-        <input
-          type="text"
-          onChange={this.handleChange}
-          value={this.state.site.url}
-        />
-
-        <input type="submit" value="Save" />
-        {this.props.sites.map((site) => (
-          <div key={site.url}>{site.url}</div>
-        ))}
-      </form>
+        <SiteList sites={this.props.sites} />
+      </>
     );
   }
 }
 
 SitesPage.propTypes = {
+  organizations: PropTypes.array.isRequired,
   sites: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired,
 };
 
 function mapStateToProps(state) {
   return {
-    sites: state.sites,
+    sites:
+      state.organizations.length === 0
+        ? []
+        : state.sites.map((site) => {
+            return {
+              ...site,
+              organizationName: state.organizations.find(
+                (o) => o.organization_id === site.organization
+              ).organization,
+            };
+          }),
+    organizations: state.organizations,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(siteActions, dispatch),
+    actions: {
+      loadSites: bindActionCreators(siteActions.loadSites, dispatch),
+      loadOrganizations: bindActionCreators(
+        organizationActions.loadOrganizations,
+        dispatch
+      ),
+    },
   };
 }
 
