@@ -5,6 +5,7 @@ import AboutPage from "./about/AboutPage";
 import SitesPage from "./sites/SitesPage";
 import Header from "./common/Header";
 import PageNotFound from "./PageNotFound";
+import ManageSitePage from "./sites/ManageSitePage";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/sites" component={SitesPage} />
+        <Route path="/site/:slug" component={ManageSitePage} />
+        <Route path="/site" component={ManageSitePage} />
         <Route path="/about" component={AboutPage} />
         <Route component={PageNotFound} />
       </Switch>

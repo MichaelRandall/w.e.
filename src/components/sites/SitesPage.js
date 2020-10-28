@@ -9,14 +9,16 @@ import SiteList from "./SiteList";
 
 class SitesPage extends React.Component {
   componentDidMount() {
-    if (this.props.sites.length === 0) {
-      this.props.actions.loadSites().catch((error) => {
+    const { sites, organizations, actions } = this.props;
+
+    if (sites.length === 0) {
+      actions.loadSites().catch((error) => {
         alert("Loading sites failed" + error);
       });
     }
 
-    if (this.props.organizations.length === 0) {
-      this.props.actions.loadOrganizations().catch((error) => {
+    if (organizations.length === 0) {
+      actions.loadOrganizations().catch((error) => {
         alert("Loading organizations failed" + error);
       });
     }
