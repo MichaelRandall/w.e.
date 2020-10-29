@@ -21763,70 +21763,87 @@ const organizations = [
   {
     organization_id: "1",
     organization: "ACEIT",
+    organization_name: "Army Core of Engineers - Information Technology"
   },
   {
     organization_id: "2",
     organization: "AGC",
+    organization_name: "Army Geospatial Center"
   },
   {
     organization_id: "3",
     organization: "ERDC",
+    organization_name: "Engineer Research and Development Center"
   },
   {
     organization_id: "4",
     organization: "FC",
+    organization_name: "Finance Center"
   },
   {
     organization_id: "5",
     organization: "HECSA",
+    organization_name: "Humphreys Engineer Center Support Activity"
   },
   {
     organization_id: "6",
     organization: "HNC",
+    organization_name: "Huntsville Center"
   },
   {
     organization_id: "7",
     organization: "HQ",
+    organization_name: "Headquarters"
   },
   {
     organization_id: "8",
     organization: "IWR",
+    organization_name: "Institute for Water Resources"
   },
   {
     organization_id: "9",
     organization: "LRD",
+    organization_name: "Great Lakes and Ohio River Division"
   },
   {
     organization_id: "10",
     organization: "MVD",
+    organization_name: "Mississippi Valley Division"
   },
   {
     organization_id: "11",
     organization: "NAD",
+    organization_name: "North Atlantic Division"
   },
   {
     organization_id: "12",
     organization: "NWD",
+    organization_name: "Northwestern Division"
   },
   {
     organization_id: "13",
     organization: "POD",
+    organization_name: "Pacific Ocean Division"
   },
   {
     organization_id: "14",
     organization: "SAD",
+    organization_name: "South Atlantic Division"
   },
   {
     organization_id: "15",
     organization: "SPD",
+    organization_name: "South Pacific Division"
   },
   {
     organization_id: "16",
     organization: "SWD",
+    organization_name: "Southwestern Division"
   },
   {
     organization_id: "17",
     organization: "TAD",
+    organization_name: "Transatlantic Division"
   },
 ];
 
