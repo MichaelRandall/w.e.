@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import sites from "./siteReducer";
-import organizations from "./organizationReducer";
+import app from "./appReducer";
+import device from "./deviceReducer";
 
 const rootReducer = combineReducers({
-  sites: sites,
-  organizations: organizations,
+  app,
+  device
 });
 
 export default rootReducer;

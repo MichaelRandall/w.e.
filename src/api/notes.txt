@@ -1,1 +1,0 @@
-The api directory contains all files that make api calls

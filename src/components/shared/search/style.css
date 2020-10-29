@@ -1,0 +1,30 @@
+.search.container {
+  align-items: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 340px;
+}
+
+.search > .title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.search > .sub-title {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.search .input {
+  background-color: #000;
+  border-radius: 0.25rem;
+  width: 500px;
+}
+
+.ant-input-search>.ant-input-group>.ant-input-group-addon {
+  left: 0px;
+}

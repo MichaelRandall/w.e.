@@ -1,4 +1,12 @@
 export default {
-    sites: [],
-    organizations: []
+  app: {
+    metadata: {
+      organization: {},
+      organizations: [],
+      website: {},
+      websites: []
+    },
+    search: {}
+  },
+  device: {}
 };

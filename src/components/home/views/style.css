@@ -1,0 +1,8 @@
+.overview.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  height: auto;
+  overflow-y: auto;
+  padding: 3rem;
+}
