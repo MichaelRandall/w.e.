@@ -54,3 +54,5 @@ SiteForm.propTypes = {
     onChange: PropTypes.func.isRequired,
     saving: PropTypes.bool
 };
+
+export default SiteForm;
