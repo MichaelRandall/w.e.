@@ -1,22 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Card, CardDeck } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./Organization.css";
 
 const OrganizationList = ({organizations}) => (
-    <CardDeck>
-        {organizations.map((organization) => {
+        
+        organizations.map((organization) => {
             return(
-                <Card key={organization.organization_id} style={{ width: '22rem' }}>
-                    {/* <Card.Header as="h5">{organization.organization}</Card.Header> */}
-                    <Card.Body>
-                        <Card.Title>{organization.organization}</Card.Title>
-                        <Card.Text>{organization.organization_name}</Card.Text>
-                    </Card.Body>
+                <div className="wrapper" key={organization.id}>
+                    
+                <Card style={{width: "18rem"}} key={organization.organation_id} className="box">
+                    <Card.Title>{organization.organization}</Card.Title>
+                    <Card.Subtitle>{organization.organization_name}</Card.Subtitle>
                 </Card>
+                
+                
+                </div>
             )
-        })};
-    </CardDeck>  
+        })
+           
 );
 
 OrganizationList.propTypes = {
